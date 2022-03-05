@@ -1,8 +1,13 @@
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+src/main/resources/static/bootstrap/
+src/main/resources/static/js/jQuery-3.6.0.js
+.mvn/
+.mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
+**/src/main/**/target/
+**/src/test/**/target/
 
 ### STS ###
 .apt_generated
