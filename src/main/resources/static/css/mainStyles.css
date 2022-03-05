@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Regular.ttf)format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+body{
+    font-family: 'Roboto';
+}
+.img-main img{
+    width: 800px;
+    height: 800px;
+    display: block;
+    margin: 0 auto;
+}
+.main{
+    height: 90vh;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #101828;
+    color: #FFF;
+}
