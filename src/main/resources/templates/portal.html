@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleos App - Portal de empleos</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/mainStyles.css">
+    <link rel="stylesheet" href="../static/css/portal.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Empleos App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="container-fluid d-flex justify-content-end">
+                    <a href="#" class="btn btn-outline-success me-2" role="button">Inicia Sesi&oacute;n</a>
+                    <a href="#" class="btn btn-primary me-2" role="button">Registrarme</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="container main-portal">
+        <div class="row">
+            <div class="col-auto col-md-6 mt-5">
+                <h1 class="my-card-title my-3">Feria virtual de Empleos de Tecnolog&iacute;a</h1>
+                <p class="my-card-text my-3">¡M&aacute;s de 700 ofertas de trabajo en M&eacute;xico, USA y Remoto!</p>
+                <div class="col-sm-12 d-sm-flex justify-content-sm-center d-md-block">
+                    <button class="btn btn-primary my-3 w-25">Visitar feria</button>
+                </div>
+            </div>
+            <div class="col-auto col-md-6 mx-auto img-portal">
+                <img src="../static/images/3236267.jpg" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form action="" method="get">
+                    <div class="row search-box p-3 mb-5">
+                        <div class="col-sm-12 col-md-5">
+                            <label class="form-label" for="vacante">Qu&eacute;</label>
+                            <input class="form-control w-100" type="search" id="vacante" name="vacante"
+                                placeholder="Puesto, palabra clave">
+
+                        </div>
+                        <div class="col-sm-12 col-md-5">
+                            <label for="where" class="form-label">D&oacute;nde</label>
+                            <select class="form-select w-100" name="where" id="where-select">
+                                <option value="guanajuato">Guanajuato</option>
+                                <option value="guadalajara">Guadalajara</option>
+
+                                <option value="veracruz">Veracruz</option>
+                                <option value="monterrey">Monterrey</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-12 col-md-2 d-flex justify-content-center align-items-center">
+                            <button type="submit" class="btn btn-primary w-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h6 class="">B&uacute;squedas populares</h6>
+                <span class="badge bg-primary p-2 m-1 tag">Programador Java</span>
+                <span class="badge bg-primary p-2 m-1 tag">Analista de Sistemas</span>
+                <span class="badge bg-primary p-2 m-1 tag">diseñador UX</span>
+                <span class="badge bg-primary p-2 m-1 tag">Testing</span>
+                <span class="badge bg-primary p-2 m-1 tag">Angular JS</span>
+                <span class="badge bg-primary p-2 m-1 tag">MySQL</span>
+                <span class="badge bg-primary p-2 m-1 tag">DevOps</span>
+                <span class="badge bg-primary p-2 m-1 tag">Python</span>
+                <span class="badge bg-primary p-2 m-1 tag">Android</span>
+                <span class="badge bg-primary p-2 m-1 tag">ReacJS</span>
+                <span class="badge bg-primary p-2 m-1 tag">Ciberseguridad</span>
+                <span class="badge bg-primary p-2 m-1 tag">PHP</span>
+                <span class="badge bg-primary p-2 m-1 tag">Cobol</span>
+                <span class="badge bg-primary p-2 m-1 tag">Ruby</span>
+                <span class="badge bg-primary p-2 m-1 tag">Diseñador de Software</span>
+                <span class="badge bg-primary p-2 m-1 tag">.NET</span>
+                <span class="badge bg-primary p-2 m-1 tag">Front-End</span>
+                <span class="badge bg-primary p-2 m-1 tag">SAP</span>
+                <span class="badge bg-primary p-2 m-1 tag">Remoto</span>
+                <span class="badge bg-primary p-2 m-1 tag">Home Office</span>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12 mt-5">
+                <h6 class="text-center">Empresas</h6>
+                <h3 class="text-center">Empesas que publican sus vacantes</h3>
+                <p class="text-center">Ellos confian en Empleos App para encontrar los mejores talentos de la industria
+                </p>
+
+            </div>
+            <div class="col-12">
+                <div class="container">
+                    <div class="row my-4 py-5 px-2 img-logos shadow">
+                        <div class="col col-sm-6 col-md-4 col-lg-2 px-1 py-3"><img src="../static/images/allianceit.png"
+                                class="img-thumbnail" alt=""></div>
+                        <div class="col col-sm-6 col-md-4 col-lg-2 px-1 py-3"><img src="../static/images/allianceit.png"
+                                class="img-thumbnail" alt=""></div>
+                        <div class="col col-sm-6 col-md-4 col-lg-2 px-1 py-3"><img src="../static/images/allianceit.png"
+                                class="img-thumbnail" alt=""></div>
+                        <div class="col col-sm-6 col-md-4 col-lg-2 px-1 py-3"><img src="../static/images/allianceit.png"
+                                class="img-thumbnail" alt=""></div>
+                        <div class="col col-sm-6 col-md-4 col-lg-2 px-1 py-3"><img src="../static/images/allianceit.png"
+                                class="img-thumbnail" alt=""></div>
+                        <div class="col col-sm-6 col-md-4 col-lg-2 px-1 py-3"><img src="../static/images/allianceit.png"
+                                class="img-thumbnail" alt=""></div>
+                        <div class="col col-sm-6 col-md-4 col-lg-2 px-1 py-3"><img src="../static/images/allianceit.png"
+                                class="img-thumbnail" alt=""></div>
+                        <div class="col col-sm-6 col-md-4 col-lg-2 px-1 py-3"><img src="../static/images/allianceit.png"
+                                class="img-thumbnail" alt=""></div>
+                        <div class="col col-sm-6 col-md-4 col-lg-2 px-1 py-3"><img src="../static/images/allianceit.png"
+                                class="img-thumbnail" alt=""></div>
+                        <div class="col col-sm-6 col-md-4 col-lg-2 px-1 py-3"><img src="../static/images/allianceit.png"
+                                class="img-thumbnail" alt=""></div>
+                        <div class="col col-sm-6 col-md-4 col-lg-2 px-1 py-3"><img src="../static/images/allianceit.png"
+                                class="img-thumbnail" alt=""></div>
+                        <div class="col col-sm-6 col-md-4 col-lg-2 px-1 py-3"><img src="../static/images/allianceit.png"
+                                class="img-thumbnail" alt=""></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="container-fluid footer position-fixed start-0 bottom-0">
+        <div class="row">
+            <div class="col py-3 text-center">
+                <p> &copy;Empleos en l&iacute;nea | &copy;By Ervin Triano 2022</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

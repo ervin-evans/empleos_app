@@ -1,0 +1,66 @@
+.img-portal img {
+    width: 400px;
+    height: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.my-card-title {
+    font-weight: bolder;
+    font-size: 3.5em;
+
+}
+.my-card-text{
+    color: #797979;
+    font-size: 20px;
+}
+.search-box{
+    background-color: #FFF;
+    font-size: 22px;
+    border-radius: 5px;
+    border: 1px solid #dbdbdb;
+    box-shadow: 5px 5px 5px #c2c2c2;
+}
+.search-box label{
+    color: #696969;
+    font-weight: 700;
+}
+.search-box input{
+    width: 40%;
+    color: #b4b4b4;
+    height: 60px;
+    border: none;
+    background-color: inherit;
+    
+}
+.search-box input::placeholder{
+    color: #c2c2c2;
+}
+.search-box input:focus{
+    outline: none;
+}
+.search-box select{
+    width: 40%;
+    height: 60px;
+    background-color:inherit;
+    border: none;
+    color: #c2c2c2
+}
+.search-box button{
+    width: 60px;
+    height: 60px;
+}
+.main-portal{
+    margin-bottom: 140px;
+}
+.tag{
+    font-size: 14px;
+}
+.img-logos{
+    background-color: #FFF;
+    border-radius: 20px;
+}
+.img-logos img{
+    border: none;
+    outline: none;
+}
