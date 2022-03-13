@@ -1,0 +1,25 @@
+body{
+    background-color: #fcfcfd;
+}
+.img-detail{
+    width: 140px;
+    height: auto;
+}
+.header-card{
+    background-color:#ffffff ;
+}
+.vacant-title{
+    font-size: 1.8em;
+    color: #245eff;
+    font-weight: 500;
+}
+.vacant-salary{
+    font-size: 1.4em;
+    color: #00bdd6;
+}
+.card{
+    border-radius: 20px;
+}
+.main-details{
+    margin-bottom: 90px;
+}
