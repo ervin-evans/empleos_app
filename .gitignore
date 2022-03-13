@@ -1,9 +1,11 @@
 HELP.md
 target/
-#src/main/resources/static/bootstrap/
-#src/main/resources/static/js/jQuery-3.6.0.js
-#src/main/resources/static/fonts/
-#src/main/resources/static/images/
+src/main/resources/static/bootstrap/
+src/main/resources/static/js/jQuery-3.6.0.js
+src/main/resources/static/fonts/
+src/main/resources/static/images/
+src/main/resources/static/logos/
+src/main/resources/static/tinymce/
 .mvn/
 .mvn/wrapper/maven-wrapper.jar
 mvnw
