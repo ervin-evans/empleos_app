@@ -1,25 +1,56 @@
-body{
+body {
     background-color: #fcfcfd;
 }
-.img-detail{
+
+.img-detail {
     width: 140px;
     height: auto;
 }
-.header-card{
-    background-color:#ffffff ;
+
+.header-card {
+    background-color: #ffffff;
 }
-.vacant-title{
+
+.vacant-title {
     font-size: 1.8em;
     color: #245eff;
     font-weight: 500;
 }
-.vacant-salary{
+
+.vacant-salary {
     font-size: 1.4em;
     color: #00bdd6;
 }
-.card{
+
+.card {
     border-radius: 20px;
 }
-.main-details{
+
+.main-details {
     margin-bottom: 90px;
+}
+
+/*Estilos para el login modal*/
+.logo-container{
+    border-radius: 10px;
+}
+.linkedin-container {
+    background-color: #0077b7;
+    height: 60px;
+
+}
+
+.facebook-container {
+    background-color: #4267b2;
+    height: 60px;
+}
+
+.google-container {
+    background-color: #dd4b39;
+    height: 60px;
+}
+input[type=password]::placeholder{
+    font-size: 1.8em;
+    letter-spacing: 2px;
+    font-weight: 700;
 }

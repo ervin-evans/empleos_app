@@ -22,8 +22,30 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="container-fluid d-flex justify-content-end">
-                    <a href="#" class="btn btn-outline-success me-2" role="button">Inicia Sesi&oacute;n</a>
+                    <!--Botones que lanzarán ventanas modales-->
+                    <a href="#" class="btn btn-outline-success me-2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" role="button">Inicia Sesi&oacute;n</a>
                     <a href="#" class="btn btn-primary me-2" role="button">Registrarme</a>
+
+                    <!--Modal para registrarse-->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hiden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">titulo de la ventana modal</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Cuerpo del modal</p>
+                                </div>
+                                <div class="modal-footer">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -153,6 +175,7 @@
             </div>
         </div>
     </footer>
+    <script src="../../static/bootstrap/js/bootstrap.js"></script>
 </body>
 
 </html>
