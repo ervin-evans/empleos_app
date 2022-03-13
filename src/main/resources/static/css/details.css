@@ -29,28 +29,3 @@ body {
 .main-details {
     margin-bottom: 90px;
 }
-
-/*Estilos para el login modal*/
-.logo-container{
-    border-radius: 10px;
-}
-.linkedin-container {
-    background-color: #0077b7;
-    height: 60px;
-
-}
-
-.facebook-container {
-    background-color: #4267b2;
-    height: 60px;
-}
-
-.google-container {
-    background-color: #dd4b39;
-    height: 60px;
-}
-input[type=password]::placeholder{
-    font-size: 1.8em;
-    letter-spacing: 2px;
-    font-weight: 700;
-}
