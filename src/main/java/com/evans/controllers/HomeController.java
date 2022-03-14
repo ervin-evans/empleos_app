@@ -10,4 +10,9 @@ public class HomeController {
 	public String index() {
 		return "index.html";
 	}
+	
+	@GetMapping("/job/portal")
+	public String	 findAJob() {
+		return "portal";
+	}
 }
