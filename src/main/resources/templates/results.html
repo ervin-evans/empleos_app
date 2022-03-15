@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -8,51 +8,24 @@
     <title>Empleos App - M&eacute;xico</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<link rel="stylesheet" th:href="@{/css/mainStyles.css}">
+    <link rel="stylesheet" th:href="@{/css/mainStyles.css}">
     <link rel="stylesheet" th:href="@{/css/¿results.css}">
+    <style>
+    .card{
+    	transition: all .2s ease-in-out;
+    }
+        .card:hover{
+            transform: scale(1.03);
+            box-shadow: -10px -10px 20px rgba(255, 0, 0, 0.8);
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light  menu-bar ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Empleos App</a>
-
-            <form action="" method="get" class="d-lg-flex d-none form-search p-3 shadow">
-                <input type="search" class="form-control mx-1" placeholder="Buscar" aria-label="Buscar">
-
-                <select name="" id="" class="form-select" aria-label="Default select">
-                    <option value="todo-mexico" selected>Todo M&eacute;xico</option>
-                    <option value="guadalajara">Guadalajara</option>
-                    <option value="monterrey">Monterrey</option>
-                    <option value="chiapas">Chiapas</option>
-                    <option value="durango">Durango</option>
-                    <option value="guanajuato">Guanajuato</option>
-                    <option value="veracruz">Veracruz</option>
-                </select>
-
-
-                <button class="btn btn-primary mx-2 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-search" viewBox="0 0 16 16">
-                        <path
-                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                    </svg>
-                </button>
-            </form>
-
-            <div class="row">
-                <div class="col">
-                    <a href="#" class="btn btn-outline-success me-2" role="button">Inicia Sesi&oacute;n</a>
-                    <a href="#" class="btn btn-primary me-2" role="button">Registrarme</a>
-
-                </div>
-            </div>
-
-        </div>
-    </nav>
-    <main class="container main-results">
+    <header th:insert="fragments/navbar-search::menu"></header>
+    <main class="container mb-5 main-results">
         <div class="row">
-            <div class="col-auto filtros">
+            <div class="col-auto my-4 filtros">
                 <form action="" method="get">
                     <div class="row">
                         <div class="col">
@@ -95,10 +68,10 @@
                 </form>
             </div>
         </div>
-        <div class="row">
+        <div class="row my-4">
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card shadow my-2 card-style">
-                    <img src="../static/images/allianceit.png" class="card-img-top" alt="Imagén de la empresa">
+                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
 
                     <div class="card-body">
                         <h5 class="card-title title"><strong>Programador Java</strong> </h5>
@@ -135,7 +108,7 @@
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card shadow my-2 card-style">
-                    <img src="../static/images/allianceit.png" class="card-img-top" alt="Imagén de la empresa">
+                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
 
                     <div class="card-body">
                         <h5 class="card-title title"><strong>Programador Java</strong> </h5>
@@ -172,7 +145,7 @@
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card shadow my-2 card-style">
-                    <img src="../static/images/allianceit.png" class="card-img-top" alt="Imagén de la empresa">
+                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
 
                     <div class="card-body">
                         <h5 class="card-title title"><strong>Programador Java</strong> </h5>
@@ -209,7 +182,7 @@
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card shadow my-2 card-style">
-                    <img src="../static/images/allianceit.png" class="card-img-top" alt="Imagén de la empresa">
+                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
 
                     <div class="card-body">
                         <h5 class="card-title title"><strong>Programador Java</strong> </h5>
@@ -246,7 +219,7 @@
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card shadow my-2 card-style">
-                    <img src="../static/images/allianceit.png" class="card-img-top" alt="Imagén de la empresa">
+                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
 
                     <div class="card-body">
                         <h5 class="card-title title"><strong>Programador Java</strong> </h5>
@@ -283,7 +256,7 @@
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card shadow my-2 card-style">
-                    <img src="../static/images/allianceit.png" class="card-img-top" alt="Imagén de la empresa">
+                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
 
                     <div class="card-body">
                         <h5 class="card-title title"><strong>Programador Java</strong> </h5>
@@ -320,7 +293,7 @@
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card shadow my-2 card-style">
-                    <img src="../static/images/allianceit.png" class="card-img-top" alt="Imagén de la empresa">
+                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
 
                     <div class="card-body">
                         <h5 class="card-title title"><strong>Programador Java</strong> </h5>
@@ -357,7 +330,7 @@
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card shadow my-2 card-style">
-                    <img src="../static/images/allianceit.png" class="card-img-top" alt="Imagén de la empresa">
+                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
 
                     <div class="card-body">
                         <h5 class="card-title title"><strong>Programador Java</strong> </h5>
@@ -394,7 +367,7 @@
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card shadow my-2 card-style">
-                    <img src="../static/images/allianceit.png" class="card-img-top" alt="Imagén de la empresa">
+                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
 
                     <div class="card-body">
                         <h5 class="card-title title"><strong>Programador Java</strong> </h5>
@@ -434,17 +407,11 @@
         </div>
     </main>
 
-    <footer class="container-fluid footer position-fixed bottom-0 start-0">
-        <div class="row">
-            <div class="col py-3 text-center">
-                <p> &copy;Empleos en l&iacute;nea | &copy;By Ervin Triano 2022</p>
-            </div>
-        </div>
-    </footer>
+    <footer th:insert="fragments/footer::footer" ></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-</script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
