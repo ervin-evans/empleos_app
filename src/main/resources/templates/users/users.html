@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleos App - Listado de usuarios</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+
+    <link rel="stylesheet" href="../../static/css/mainStyles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Empleos App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="container-fluid d-flex justify-content-end">
+                    <div class="row">
+                        <div class="col">
+                            <!--Botones que reaccionarán a una ventana modal-->
+                            <a href="#" class="btn btn-outline-success me-2" role="button" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Inicia Sesi&oacute;n</a>
+                            <a href="#" class="btn btn-primary me-2" role="button">Registrarme</a>
+
+                            <!--Modal para registrarse-->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hiden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content p-3">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Inicia sesi&oacute;n en Empleos App</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Ingresa con redes sociales</p>
+                                            <div class="row d-flex justify-content-center ">
+                                                <div
+                                                    class="col-3 logo-container linkedin-container m-2 text-center d-flex justify-content-center align-items-center">
+                                                    <img src="../../static/logos/linkedin.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="col-3 logo-container facebook-container m-2 d-flex justify-content-center align-items-center">
+                                                    <img src="../../static/logos/facebook.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="col-3 logo-container google-container m-2 text-center d-flex justify-content-center align-items-center">
+                                                    <img src="../../static/logos/google-mas.png" alt="">
+                                                </div>
+                                            </div>
+                                            <form class="my-3 needs-validation" action="" method="post" novalidate>
+                                                <div class="row">
+                                                    <div class="col-12 my-3">
+                                                        <label for="email" class="form-label">Tu correo</label>
+                                                        <input type="email" class="form-control" id="email" name="email"
+                                                            placeholder="ejemplo@email.com" required>
+                                                        <div class="valid-feedback">
+                                                            ¡Luce bien!
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            Necesita proporcionar un e-mail v&aacute;lido
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label for="pass" class="form-label">Tu contraseña</label>
+                                                        <input type="password" class="form-control" id="pass"
+                                                            name="pass" placeholder="············" required>
+                                                        <div class="valid-feedback">Luce bien</div>
+                                                        <div class="invalid-feedback">Parece que su contraseña
+                                                            est&aacute;
+                                                            inscorrecta</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 my-3">
+                                                    <a href="#" class="">¿Haz olvidado tu contraseña?</a>
+                                                </div>
+                                                <div class="col-12 my-4">
+                                                    <button type="submit" class="btn btn-primary w-100">Iniciar
+                                                        sessi&oacute;n</button>
+                                                </div>
+                                                <p class="text-center">¿Eres nuevo? <span class="me-2"><a
+                                                            href="#">Reg&iacute;strate</a></span> </p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+        <h3 class="text-center fs-1 my-3">Administraci&oacute;n de usuarios</h3>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped table-hover mt-3">
+                    <thead class="shadow">
+                        <tr>
+                            <th scope="col" class="fs-5 bg-success text-center text-white">Id</th>
+                            <th scope="col" class="fs-5 bg-success text-center text-white">Nombre</th>
+                            <th scope="col" class="fs-5 bg-success text-center text-white">E-mail</th>
+                            <th scope="col" class="fs-5 bg-success text-center text-white">Username</th>
+                            <th scope="col" class="fs-5 bg-success text-center text-white">Password</th>
+                            <th scope="col" class="fs-5 bg-success text-center text-white">Status</th>
+                            <th scope="col" class="fs-5 bg-success text-center text-white">Fecha de registro</th>
+                            <th scope="col" class="fs-5 bg-success text-center text-white">Editar</th>
+                            <th scope="col" class="fs-5 bg-success text-center text-white">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="align-middle text-center" scope="row">1</th>
+                            <td class="align-middle">Ervin</td>
+                            <td class="align-middle">ervintdeveloper@gmail.com</td>
+                            <td class="align-middle">evans</td>
+                            <td class="align-middle">ervin123</td>
+                            <td class="align-middle text-center">1</td>
+                            <td class="align-middle text-center">12-03-2022</td>
+                            <td class="align-middle text-center">
+                                <a href="#" class="btn btn-primary" role="button">Editar</a>
+                            </td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-danger" role="button">Eliminar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center" scope="row">1</th>
+                            <td class="align-middle">Ervin</td>
+                            <td class="align-middle">ervintdeveloper@gmail.com</td>
+                            <td class="align-middle">evans</td>
+                            <td class="align-middle">ervin123</td>
+                            <td class="align-middle text-center">1</td>
+                            <td class="align-middle text-center">12-03-2022</td>
+                            <td class="align-middle text-center">
+                                <a href="#" class="btn btn-primary" role="button">Editar</a>
+                            </td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-danger" role="button">Eliminar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center" scope="row">1</th>
+                            <td class="align-middle">Ervin</td>
+                            <td class="align-middle">ervintdeveloper@gmail.com</td>
+                            <td class="align-middle">evans</td>
+                            <td class="align-middle">ervin123</td>
+                            <td class="align-middle text-center">1</td>
+                            <td class="align-middle text-center">12-03-2022</td>
+                            <td class="align-middle text-center">
+                                <a href="#" class="btn btn-primary" role="button">Editar</a>
+                            </td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-danger" role="button">Eliminar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center" scope="row">1</th>
+                            <td class="align-middle">Ervin</td>
+                            <td class="align-middle">ervintdeveloper@gmail.com</td>
+                            <td class="align-middle">evans</td>
+                            <td class="align-middle">ervin123</td>
+                            <td class="align-middle text-center">1</td>
+                            <td class="align-middle text-center">12-03-2022</td>
+                            <td class="align-middle text-center">
+                                <a href="#" class="btn btn-primary" role="button">Editar</a>
+                            </td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-danger" role="button">Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="container-fluid footer position-fixed bottom-0 start-0">
+        <div class="row">
+            <div class="col py-3 text-center">
+                <p> &copy;Empleos en l&iacute;nea | &copy;By Ervin Triano 2022</p>
+
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+</body>
+
+</html>
