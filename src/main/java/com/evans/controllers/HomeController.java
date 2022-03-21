@@ -16,8 +16,5 @@ public class HomeController {
 		return "portal";
 	}
 	
-	@GetMapping("/search/results")
-	public String showSearchReults() {
-		return "results";
-	}
+	
 }

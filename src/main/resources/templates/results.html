@@ -2,416 +2,141 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empleos App - M&eacute;xico</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/css/mainStyles.css}">
-    <link rel="stylesheet" th:href="@{/css/¿results.css}">
-    <style>
-    .card{
-    	transition: all .2s ease-in-out;
-    }
-        .card:hover{
-            transform: scale(1.03);
-            box-shadow: -10px -10px 20px rgba(255, 0, 0, 0.8);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empleos App - M&eacute;xico</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link rel="stylesheet" th:href="@{/css/mainStyles.css}">
+<link rel="stylesheet" th:href="@{/css/¿results.css}">
+<style>
+.card {
+	transition: all .2s ease-in-out;
+}
+
+.card:hover {
+	transform: scale(1.03);
+	box-shadow: -10px -10px 20px rgba(255, 0, 0, 0.8);
+	cursor:pointer;
+}
+</style>
 </head>
 
 <body>
-    <header th:insert="fragments/navbar-search::menu"></header>
-    <main class="container mb-5 main-results">
-        <div class="row">
-            <div class="col-auto my-4 filtros">
-                <form action="" method="get">
-                    <div class="row">
-                        <div class="col">
+	<header th:insert="fragments/navbar-search::menu"></header>
+	<main class="container mb-5 main-results">
+		<div class="row">
+			<div class="col-auto my-4 filtros">
+				<form action="" method="get">
+					<div class="row">
+						<div class="col">
 
-                            <select name="tipoEmpleo" id="tipoEmpleo" class="form-select"
-                                aria-label="Default select example">
-                                <option value="null">Tipo de empleo</option>
-                                <option value="1">Empleado de tiempo completo</option>
-                                <option value="2">Recién graduado</option>
-                                <option value="3">Home Office</option>
-                                <option value="4">Freelance</option>
-                            </select>
-                        </div>
-                        <div class="col">
+							<select name="tipoEmpleo" id="tipoEmpleo" class="form-select"
+								aria-label="Default select example">
+								<option value="null">Tipo de empleo</option>
+								<option value="1">Empleado de tiempo completo</option>
+								<option value="2">Recién graduado</option>
+								<option value="3">Home Office</option>
+								<option value="4">Freelance</option>
+							</select>
+						</div>
+						<div class="col">
 
-                            <select name="rango-salarial" id="rango-salarial" class="form-select"
-                                aria-label="Default select example">
-                                <option value="1">Rango salarial</option>
-                                <option value="2">$5,000 - $10,000</option>
-                                <option value="3">$10,000 - $15,000</option>
-                                <option value="4">$15,000 - $20,000</option>
-                                <option value="5">$20,000 - $25,000</option>
-                                <option value="6">$25,000 - $30,000</option>
-                                <option value="7">$30,000 - $40,000</option>
-                                <option value="8">mas ...</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <button class="btn btn-outline-primary"> <i><svg xmlns="http://www.w3.org/2000/svg"
-                                        width="16" height="16" fill="currentColor" class="bi bi-funnel-fill"
-                                        viewBox="0 0 16 16">
+							<select name="rango-salarial" id="rango-salarial"
+								class="form-select" aria-label="Default select example">
+								<option value="1">Rango salarial</option>
+								<option value="2">$5,000 - $10,000</option>
+								<option value="3">$10,000 - $15,000</option>
+								<option value="4">$15,000 - $20,000</option>
+								<option value="5">$20,000 - $25,000</option>
+								<option value="6">$25,000 - $30,000</option>
+								<option value="7">$30,000 - $40,000</option>
+								<option value="8">mas ...</option>
+							</select>
+						</div>
+						<div class="col">
+							<button class="btn btn-outline-primary">
+								<i><svg xmlns="http://www.w3.org/2000/svg" width="16"
+										height="16" fill="currentColor" class="bi bi-funnel-fill"
+										viewBox="0 0 16 16">
                                         <path
-                                            d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z" />
-                                    </svg></i> Filtrar</button>
-                        </div>
-                    </div>
+											d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z" />
+                                    </svg></i> Filtrar
+							</button>
+						</div>
+					</div>
 
 
 
-                </form>
-            </div>
-        </div>
-        <div class="row my-4">
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card shadow my-2 card-style">
-                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
+				</form>
+			</div>
+		</div>
+		<div class="row my-4">
+			<!-- Card -->
+			<div class="col-sm-12 col-md-6 col-lg-4" th:each="vacante:${vacantes}">
+				<div class="card shadow my-2 card-style">
+					<img th:src="@{/images/{img}(img=${vacante.image})}" class="card-img-top"
+						alt="Imagén de la empresa">
 
-                    <div class="card-body">
-                        <h5 class="card-title title"><strong>Programador Java</strong> </h5>
-                        <h5 class="card-title money">Sueldo: $30,000.00</h5>
-                        <p class="card-text text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-                            ad sit
-                            doloremque perferendis nesciunt, accusantium aut sunt sint amet est sapiente, rerum deserunt
-                            unde quidem repudiandae. Eligendi, aliquam? Eum, nam.</p>
-                        <div class="row mb-3">
+					<div class="card-body">
+						<h5 class="card-title title" th:text="${vacante.nombre}">
+							<strong>Programador Java</strong>
+						</h5>
+						<h5 class="card-title money">Sueldo: <span  th:text="${#numbers.formatCurrency(vacante.salario)}"></span></h5>
+						<p class="card-text text-muted" th:text="${vacante.descripcion}">Lorem ipsum, dolor sit amet
+							consectetur adipisicing elit. Iusto ad sit doloremque perferendis
+							nesciunt, accusantium aut sunt sint amet est sapiente, rerum
+							deserunt unde quidem repudiandae. Eligendi, aliquam? Eum, nam.</p>
+						<div class="row mb-3">
 
-                            <div class="col-6">
-                                <span class="align-top me-2"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                                        height="18" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+							<div class="col-6">
+								<span class="align-top me-2"><svg
+										xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+										fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
                                         <path
-                                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
-                                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                    </svg></span>
-                                <span class="me-3">Home Office</span>
-                            </div>
-                            <div class="col-6">
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-stopwatch" viewBox="0 0 16 16">
+											d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
                                         <path
-                                            d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z" />
+											d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    </svg></span> <span class="me-3">Home
+									Office</span>
+							</div>
+							<div class="col-6">
+								<span><svg xmlns="http://www.w3.org/2000/svg" width="16"
+										height="16" fill="currentColor" class="bi bi-stopwatch"
+										viewBox="0 0 16 16">
                                         <path
-                                            d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z" />
+											d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z" />
+                                        <path
+											d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z" />
                                     </svg></span> <span>Tiempo completo</span>
-                            </div>
-                        </div>
+							</div>
+						</div>
 
-                    </div>
+					</div>
+					<div class="card-footer">
+						<a class="btn btn-outline-primary w-100" th:href="@{/vacantes/details/{id}(id=${vacante.id})}">Ver detalles</a>
+					</div>
 
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card shadow my-2 card-style">
-                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
+				</div>
+			</div>
+			<!-- Card -->
 
-                    <div class="card-body">
-                        <h5 class="card-title title"><strong>Programador Java</strong> </h5>
-                        <h5 class="card-title money">Sueldo: $30,000.00</h5>
-                        <p class="card-text text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-                            ad sit
-                            doloremque perferendis nesciunt, accusantium aut sunt sint amet est sapiente, rerum deserunt
-                            unde quidem repudiandae. Eligendi, aliquam? Eum, nam.</p>
-                        <div class="row mb-3">
+		</div>
+	</main>
 
-                            <div class="col-6">
-                                <span class="align-top me-2"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                                        height="18" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                                        <path
-                                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
-                                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                    </svg></span>
-                                <span class="me-3">Home Office</span>
-                            </div>
-                            <div class="col-6">
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-stopwatch" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z" />
-                                        <path
-                                            d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z" />
-                                    </svg></span> <span>Tiempo completo</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card shadow my-2 card-style">
-                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
-
-                    <div class="card-body">
-                        <h5 class="card-title title"><strong>Programador Java</strong> </h5>
-                        <h5 class="card-title money">Sueldo: $30,000.00</h5>
-                        <p class="card-text text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-                            ad sit
-                            doloremque perferendis nesciunt, accusantium aut sunt sint amet est sapiente, rerum deserunt
-                            unde quidem repudiandae. Eligendi, aliquam? Eum, nam.</p>
-                        <div class="row mb-3">
-
-                            <div class="col-6">
-                                <span class="align-top me-2"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                                        height="18" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                                        <path
-                                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
-                                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                    </svg></span>
-                                <span class="me-3">Home Office</span>
-                            </div>
-                            <div class="col-6">
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-stopwatch" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z" />
-                                        <path
-                                            d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z" />
-                                    </svg></span> <span>Tiempo completo</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card shadow my-2 card-style">
-                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
-
-                    <div class="card-body">
-                        <h5 class="card-title title"><strong>Programador Java</strong> </h5>
-                        <h5 class="card-title money">Sueldo: $30,000.00</h5>
-                        <p class="card-text text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-                            ad sit
-                            doloremque perferendis nesciunt, accusantium aut sunt sint amet est sapiente, rerum deserunt
-                            unde quidem repudiandae. Eligendi, aliquam? Eum, nam.</p>
-                        <div class="row mb-3">
-
-                            <div class="col-6">
-                                <span class="align-top me-2"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                                        height="18" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                                        <path
-                                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
-                                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                    </svg></span>
-                                <span class="me-3">Home Office</span>
-                            </div>
-                            <div class="col-6">
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-stopwatch" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z" />
-                                        <path
-                                            d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z" />
-                                    </svg></span> <span>Tiempo completo</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card shadow my-2 card-style">
-                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
-
-                    <div class="card-body">
-                        <h5 class="card-title title"><strong>Programador Java</strong> </h5>
-                        <h5 class="card-title money">Sueldo: $30,000.00</h5>
-                        <p class="card-text text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-                            ad sit
-                            doloremque perferendis nesciunt, accusantium aut sunt sint amet est sapiente, rerum deserunt
-                            unde quidem repudiandae. Eligendi, aliquam? Eum, nam.</p>
-                        <div class="row mb-3">
-
-                            <div class="col-6">
-                                <span class="align-top me-2"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                                        height="18" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                                        <path
-                                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
-                                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                    </svg></span>
-                                <span class="me-3">Home Office</span>
-                            </div>
-                            <div class="col-6">
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-stopwatch" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z" />
-                                        <path
-                                            d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z" />
-                                    </svg></span> <span>Tiempo completo</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card shadow my-2 card-style">
-                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
-
-                    <div class="card-body">
-                        <h5 class="card-title title"><strong>Programador Java</strong> </h5>
-                        <h5 class="card-title money">Sueldo: $30,000.00</h5>
-                        <p class="card-text text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-                            ad sit
-                            doloremque perferendis nesciunt, accusantium aut sunt sint amet est sapiente, rerum deserunt
-                            unde quidem repudiandae. Eligendi, aliquam? Eum, nam.</p>
-                        <div class="row mb-3">
-
-                            <div class="col-6">
-                                <span class="align-top me-2"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                                        height="18" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                                        <path
-                                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
-                                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                    </svg></span>
-                                <span class="me-3">Home Office</span>
-                            </div>
-                            <div class="col-6">
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-stopwatch" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z" />
-                                        <path
-                                            d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z" />
-                                    </svg></span> <span>Tiempo completo</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card shadow my-2 card-style">
-                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
-
-                    <div class="card-body">
-                        <h5 class="card-title title"><strong>Programador Java</strong> </h5>
-                        <h5 class="card-title money">Sueldo: $30,000.00</h5>
-                        <p class="card-text text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-                            ad sit
-                            doloremque perferendis nesciunt, accusantium aut sunt sint amet est sapiente, rerum deserunt
-                            unde quidem repudiandae. Eligendi, aliquam? Eum, nam.</p>
-                        <div class="row mb-3">
-
-                            <div class="col-6">
-                                <span class="align-top me-2"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                                        height="18" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                                        <path
-                                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
-                                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                    </svg></span>
-                                <span class="me-3">Home Office</span>
-                            </div>
-                            <div class="col-6">
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-stopwatch" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z" />
-                                        <path
-                                            d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z" />
-                                    </svg></span> <span>Tiempo completo</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card shadow my-2 card-style">
-                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
-
-                    <div class="card-body">
-                        <h5 class="card-title title"><strong>Programador Java</strong> </h5>
-                        <h5 class="card-title money">Sueldo: $30,000.00</h5>
-                        <p class="card-text text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-                            ad sit
-                            doloremque perferendis nesciunt, accusantium aut sunt sint amet est sapiente, rerum deserunt
-                            unde quidem repudiandae. Eligendi, aliquam? Eum, nam.</p>
-                        <div class="row mb-3">
-
-                            <div class="col-6">
-                                <span class="align-top me-2"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                                        height="18" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                                        <path
-                                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
-                                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                    </svg></span>
-                                <span class="me-3">Home Office</span>
-                            </div>
-                            <div class="col-6">
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-stopwatch" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z" />
-                                        <path
-                                            d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z" />
-                                    </svg></span> <span>Tiempo completo</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card shadow my-2 card-style">
-                    <img th:src="@{/images/allianceit.png}" class="card-img-top" alt="Imagén de la empresa">
-
-                    <div class="card-body">
-                        <h5 class="card-title title"><strong>Programador Java</strong> </h5>
-                        <h5 class="card-title money">Sueldo: $30,000.00</h5>
-                        <p class="card-text text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-                            ad sit
-                            doloremque perferendis nesciunt, accusantium aut sunt sint amet est sapiente, rerum deserunt
-                            unde quidem repudiandae. Eligendi, aliquam? Eum, nam.</p>
-                        <div class="row mb-3">
-
-                            <div class="col-6">
-                                <span class="align-top me-2"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                                        height="18" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                                        <path
-                                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
-                                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                    </svg></span>
-                                <span class="me-3">Home Office</span>
-                            </div>
-                            <div class="col-6">
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-stopwatch" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z" />
-                                        <path
-                                            d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z" />
-                                    </svg></span> <span>Tiempo completo</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-
-        </div>
-    </main>
-
-    <footer th:insert="fragments/footer::footer" ></footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+	<footer th:insert="fragments/footer::footer"></footer>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous">
+		
+	</script>
 </body>
 
 </html>
