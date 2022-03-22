@@ -6,4 +6,5 @@ import com.evans.models.Vacante;
 
 public interface IVacantesService {
 	public List<Vacante> findAll();
+	public Vacante findById(Integer id);
 }

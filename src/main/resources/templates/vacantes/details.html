@@ -21,14 +21,14 @@
                     <div class="card-header p-4">
                         <div class="row d-flex">
                             <div class="col align-self-center">
-                                <img th:src="@{/images/allianceit.png}" class="img-detail" alt="">
+                                <img th:src="@{/images/{img}(img=${vacante.image})}" class="img-detail" alt="">
                             </div>
                             <div class="col text-end align-self-center">
                                 <a href="#" class="btn btn-primary" role="button">Enviar mi CV</a>
                             </div>
                             <div class="col-12 mt-4 vacant">
-                                <h5 class="vacant-title mb-2">Programador Java</h5>
-                                <h6 class="vacant-salary mb-2">Sueldo: $45,000</h6>
+                                <h5 class="vacant-title mb-2" th:text="${vacante.nombre}">Programador Java</h5>
+                                <h6 class="vacant-salary mb-2" >Sueldo: <span th:text="${#numbers.formatCurrency(vacante.salario)}"></span> </h6>
                             </div>
                             <div class="col-12 d-flex my-2" style="color: #00bddd;">
                                 <div class="flex mx-3">
@@ -51,33 +51,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body p-4">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sed perspiciatis aperiam veniam
-                            illum pariatur illo officia, rem quasi ratione inventore ipsum, ex saepe voluptatum nam
-                            praesentium quae! Quas, quibusdam magnam. Exercitationem soluta accusamus eligendi pariatur
-                            impedit a nisi dolor sapiente enim corporis dolorem, itaque deleniti, officiis cupiditate
-                            nesciunt explicabo!</p>
-                        <p> <strong>Lorem ipsum dolor sit amet.</strong> </p>
-
-                        <ul>
-                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, dolores.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
-                            <li>Lorem, ipsum dolor.</li>
-                            <li>Lorem ipsum dolor sit.</li>
-                            <li>Lorem ipsum dolor, sit amet consectetur adipisicing.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem, ipsum.</li>
-                            <li>Lorem ipsum dolor sit amet consectetur.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet. Lorem, ipsum dolor.</li>
-                        </ul>
+                    <div class="card-body p-5">
+                      <div th:utext="${vacante.detalles}">
+                      </div>
 
                     </div>
                 </div>
